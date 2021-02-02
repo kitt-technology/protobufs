@@ -16,5 +16,8 @@ protoc:
 
 build: clean protoc
 
+publish:
+	scripts/publish.sh
 
+build_publish: build publish
 
