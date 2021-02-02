@@ -1,11 +1,10 @@
 #!/bin/bash
 
+# Deals with adding files, tagging new version and pushing repo.
+# 
 
 CURR=$(git describe --tags `git rev-list --tags --max-count=1`)
-
-
 NEXT=$(./scripts/semver.sh bump minor $CURR)
-
 echo 'Building protobufs...';
 make build &&
 echo 'Committing...';
