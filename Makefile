@@ -4,10 +4,17 @@ GO_IMPORT := google/protobuf/descriptor.proto=github.com/golang/protobuf/protoc-
 .PHONE: all
 all: test
 
+.PHONY: clean
+clean:
+	@rm -rf *.pb.go
+
 deps:
 	@go mod download
 
-build:
-	@go install .
+protoc:
+	@protoc --proto_path=src --go_out=. --go_opt=paths=source_relative src/*.proto
+
+build: clean protoc
+
 
 
