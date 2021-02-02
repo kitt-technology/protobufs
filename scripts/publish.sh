@@ -4,7 +4,7 @@
 # 
 
 CURR=$(git describe --tags `git rev-list --tags --max-count=1`)
-NEXT=$(./scripts/semver.sh bump minor $CURR)
+NEXT=$(./scripts/semver.sh bump ${1-minor} $CURR)
 echo 'Building protobufs...';
 make build &&
 echo 'Committing...';
