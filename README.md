@@ -2,7 +2,7 @@
 
 ## Usage
 
-1. Make changes to `src/*.proto`
+1. Make changes to any `*.proto`
 2. Run `make build` to test output.
 3. Push changes to a branch
 4. Get review

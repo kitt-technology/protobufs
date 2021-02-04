@@ -12,7 +12,7 @@ deps:
 	@go mod download
 
 protoc:
-	@protoc --proto_path=src --go_out=. --go_opt=paths=source_relative src/*.proto
+	@protoc --proto_path=. --go_out=. --go_opt=paths=source_relative ./*.proto
 
 build: clean protoc
 
